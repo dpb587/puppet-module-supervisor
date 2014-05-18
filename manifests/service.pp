@@ -97,6 +97,7 @@ define supervisor::service (
   service { "supervisor::${name}":
     ensure   => $service_ensure,
     provider => supervisor,
+    noop     => $supervisor::update::ignore,
   }
 
   case $ensure {
